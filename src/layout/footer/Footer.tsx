@@ -8,39 +8,57 @@ export const Footer = () => {
       <SocialIconList>
         <SocialItem>
           <SocialLink>
-            <Icon iconId="gmailSvg" />
-            <SocialTitle>gmail</SocialTitle>
+            <Icon
+              iconId="gmailSvg"
+              width="38px"
+              height="38px"
+              viewBox="0 0 38 38"
+            />
           </SocialLink>
+          <SocialTitle>gmail</SocialTitle>
         </SocialItem>
 
         <SocialItem>
           <SocialLink>
-            <Icon iconId="linkedinSvg" />
-            <SocialTitle>linkedIn</SocialTitle>
+            <Icon
+              iconId="linkedinSvg"
+              width="38px"
+              height="38px"
+              viewBox="0 0 38 38"
+            />
           </SocialLink>
+          <SocialTitle>linkedIn</SocialTitle>
         </SocialItem>
 
         <SocialItem>
           <SocialLink>
-            <Icon iconId="githubSvg" />
-            <SocialTitle>github</SocialTitle>
+            <Icon
+              iconId="githubSvg"
+              width="38px"
+              height="38px"
+              viewBox="0 0 38 38"
+            />
           </SocialLink>
+          <SocialTitle>github</SocialTitle>
         </SocialItem>
       </SocialIconList>
-      <Menu menuItems={["Projects", "Contact"]} />
-      <Copyright>© 2025 Erica Font, All Rights Reserved.</Copyright>
+      <Menu menuItems={["Projects", "Contact"]} justify="center" gap="48px" />
+      <Copyright>© 2025 Hanna Alesik. All Rights Reserved.</Copyright>
     </StyledFooter>
   );
 };
 
 const StyledFooter = styled.footer`
-  background-color: #d3b6fe;
-  
+  padding-bottom: 100px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
 `;
 
 const SocialIconList = styled.ul`
   display: flex;
-  gap: 20px;
+  gap: 76px;
   justify-content: center;
   align-items: center;
 `;
@@ -48,10 +66,20 @@ const SocialIconList = styled.ul`
 const SocialItem = styled.li`
   display: flex;
   flex-direction: column;
+  gap: 10px;
 `;
 
 const SocialLink = styled.a``;
 
-const SocialTitle = styled.span``;
+const SocialTitle = styled.span`
+  font-size: 12px;
+  line-height: 11.11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+`;
 
-const Copyright = styled.small``;
+const Copyright = styled.small`
+  font-size: 14px;
+  line-height: 26px;
+  text-align: center;
+`;

@@ -1,23 +1,24 @@
 import styled from "styled-components";
-import { Button } from "../../components/button/Button";
+import { ButtonLink } from "../../components/buttonLink/ButtonLink";
 import { Menu } from "../../components/menu/Menu";
+import { Container } from "../../components/Container";
+import { FlexWrapper } from "../../components/FlexWrapper";
 
-
-const menuItems = ['Home', 'Projects'];
+const menuItems = ["Home", "Projects"];
 
 export const Header = () => {
   return (
     <StyledHeader>
-      <Menu menuItems={menuItems} />
-      <Button link="#" title="Contact" />
+      <Container>
+        <FlexWrapper justify="space-between" align="center">
+          <Menu menuItems={menuItems} justify="space-between" />
+          <ButtonLink link="#" title="Contact"/>
+        </FlexWrapper>
+      </Container>
     </StyledHeader>
   );
 };
 
 const StyledHeader = styled.header`
-  background-color: #d3b6fe;
-  display: flex;
-  gap: 87px;
-  align-items: center;
-  justify-content: center;
-`
+  padding: 28px 0;
+`;
