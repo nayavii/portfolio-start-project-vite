@@ -15,7 +15,7 @@ export const Footer = () => {
               viewBox="0 0 38 38"
             />
           </SocialLink>
-          <SocialTitle>gmail</SocialTitle>
+          <SocialTitleLink >gmail</SocialTitleLink>
         </SocialItem>
 
         <SocialItem>
@@ -27,7 +27,7 @@ export const Footer = () => {
               viewBox="0 0 38 38"
             />
           </SocialLink>
-          <SocialTitle>linkedIn</SocialTitle>
+          <SocialTitleLink>linkedIn</SocialTitleLink>
         </SocialItem>
 
         <SocialItem>
@@ -39,7 +39,7 @@ export const Footer = () => {
               viewBox="0 0 38 38"
             />
           </SocialLink>
-          <SocialTitle>github</SocialTitle>
+          <SocialTitleLink href="https://github.com/nayavii" target="_blank">github</SocialTitleLink>
         </SocialItem>
       </SocialIconList>
       <Menu menuItems={["Projects", "Contact"]} justify="center" gap="48px" />
@@ -71,15 +71,17 @@ const SocialItem = styled.li`
 
 const SocialLink = styled.a``;
 
-const SocialTitle = styled.span`
+const SocialTitleLink = styled.a`
   font-size: 12px;
   line-height: 11.11px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
+  cursor: pointer;
 `;
 
 const Copyright = styled.small`
   font-size: 14px;
   line-height: 26px;
   text-align: center;
+  letter-spacing: 0.1em;
 `;

@@ -2,31 +2,11 @@ import styled from "styled-components";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { Project } from "./project/Project";
-import projectImage from "../../../assets/images/project_image.png";
 import { Menu } from "../../../components/menu/Menu";
 import { Container } from "../../../components/Container";
 import { theme } from "../../../styles/Theme";
-
-// const tabsName = ["All", "Landing page", "React", "SPA"];
-
-const projects = [
-  {
-    category: "Landing page",
-    title: "TITLE PROJECT 1",
-    projectImage: "../../../assets/images/project_image.png",
-    tags: ["React", "TypeScript", "CSS"],
-    description:
-      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-  },
-  {
-    category: "React",
-    title: "TITLE PROJECT 2",
-    projectImage: "Student",
-    tags: ["React", "TypeScript", "CSS"],
-    description:
-      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-  },
-];
+import { projects } from "./projectsData";
+import projectImage from "../../../assets/images/project_image.png";
 
 const tabsName = projects.map((item) => item.category);
 

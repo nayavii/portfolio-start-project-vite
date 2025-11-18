@@ -39,6 +39,7 @@ export const GlobalStyle = createGlobalStyle`
 
   a { 
 		text-decoration: none;
+    color: ${theme.colors.text};
   }
 
   ul {

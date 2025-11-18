@@ -64,7 +64,7 @@ const Field = styled.input`
   &::placeholder {
     font-weight: 300;
     font-size: 13px;
-    color: #474153;
+    color: #8c819f;
   }
 `;
 
