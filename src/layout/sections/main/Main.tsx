@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Container } from "../../../components/Container";
 import { theme } from "../../../styles/Theme";
+import { font } from "../../../styles/Common";
 
 export const Main = () => {
   return (
@@ -71,33 +72,16 @@ const Content = styled.div`
 `;
 
 const MainTitle = styled.h1`
-  font-size: 20px;
-  font-weight: 400;
-
-  @media ${theme.media.tablet} {
-    font-size: 18px;
-  }
-
-  @media ${theme.media.mobile} {
-    font-size: 16px;
-  }
+  ${font({ weight: 400, FmaxSize: 20, FminSize: 16 })}
 `;
 
 const Title = styled.h3`
-  font-size: 72px;
+${font({ weight: 700, FmaxSize: 72, FminSize: 40 })}
   margin: 10px 0;
   background: ${theme.colors.gradient};
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-
-  @media ${theme.media.tablet} {
-    font-size: 60px;
-  }
-
-  @media ${theme.media.mobile} {
-    font-size: 40px;
-  }
 `;
 
 const Description = styled.p`
