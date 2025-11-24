@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import { theme } from "../../styles/Theme";
 
-export const Menu = (props: { menuItems: Array<string>; justify?: string, gap?:string }) => {
+export const Menu = (props: {
+  menuItems: Array<string>;
+  justify?: string;
+  gap?: string;
+}) => {
   return (
     <StyledMenu justify={props.justify} gap={props.gap}>
       <ul>
@@ -14,11 +18,13 @@ export const Menu = (props: { menuItems: Array<string>; justify?: string, gap?:s
     </StyledMenu>
   );
 };
-const StyledMenu = styled.nav<{ justify?: string, gap?:string }>`
+
+const StyledMenu = styled.nav<{ justify?: string; gap?: string }>`
+  width: 100%;
+  margin-right: 32px;
   ul {
     display: flex;
     align-items: center;
-    min-width: 860px;
     justify-content: ${(props) => props.justify || "flex-start"};
     gap: ${(props) => props.gap || "0px"};
   }
