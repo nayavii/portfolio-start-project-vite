@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FlexWrapper } from "../../../../components/FlexWrapper";
 import { theme } from "../../../../styles/Theme";
+import { font } from "../../../../styles/Common";
 
 type ExperienceCardPropsType = {
   institution: string;
@@ -43,6 +44,17 @@ const StyledExperienceCard = styled.article`
   &:last-child {
     margin-bottom: 0px;
   }
+
+  @media screen and (max-width: 993px) {
+    ${FlexWrapper}:first-child {
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+
+  @media ${theme.media.mobile} {
+    padding: 30px;
+  }
 `;
 
 const Header = styled.div`
@@ -54,17 +66,15 @@ const Institution = styled.h3`
 `;
 
 const Position = styled.span`
-  font-size: 15px;
+  font-size: 16px;
   line-height: 24px;
 `;
 
 const Period = styled.span`
-  font-size: 12px;
-
+  ${font({ FmaxSize: 12, FminSize: 10, color: theme.colors.bg })}
   padding: 8px 16px;
   background: ${theme.colors.gradient};
   border-radius: 6px;
-  color: ${theme.colors.bg};
 `;
 
 const CertificateTitle = styled.h3`
@@ -72,7 +82,11 @@ const CertificateTitle = styled.h3`
 `;
 
 const Details = styled.p`
-  font-size: 15px;
+  font-size: 16px;
   line-height: 24px;
   width: 600px;
+
+    @media screen and (max-width: 993px) {
+    width: 100%;
+  }
 `;
