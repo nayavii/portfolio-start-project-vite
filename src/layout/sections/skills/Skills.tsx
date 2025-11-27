@@ -3,13 +3,14 @@ import { FlexWrapper } from "../../../components/FlexWrapper";
 import styled from "styled-components";
 import { Skill } from "./skill/Skill";
 import { Container } from "../../../components/Container";
+import { theme } from "../../../styles/Theme";
 
 export const Skills = () => {
   return (
     <StyledSkills>
       <Container>
         <SectionTitle>Skills</SectionTitle>
-        <FlexWrapper wrap="wrap" justify="space-between" gap="60px 120px">
+        <FlexWrapper wrap="wrap" justify="space-between" gap="60px 150px">
           <Skill iconId="javascriptSvg" title="javascript" />
           <Skill iconId="typescriptSvg" title="typescript" />
           <Skill iconId="mongoSvg" title="mongo bd" />
@@ -29,4 +30,12 @@ export const Skills = () => {
   );
 };
 
-const StyledSkills = styled.section``;
+const StyledSkills = styled.section`
+  @media ${theme.media.large} {
+
+    ${FlexWrapper} {
+      gap: 80px 45px;
+      justify-content: center;
+    }
+  }
+`;

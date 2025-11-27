@@ -16,10 +16,10 @@ export const Projects = () => {
       <Container>
         <SectionTitle>Projects</SectionTitle>
         <MenuWrraper>
-          <Menu menuItems={tabsName} justify="center" gap="40px" />
+          <Menu menuItems={["All", ...tabsName]} justify="center" gap="40px" />
         </MenuWrraper>
 
-        <FlexWrapper justify="space-between">
+        <FlexWrapper justify="space-between" wrap="wrap" gap="20px">
           {projects.map((item, index) => (
             <Project
               key={index}
@@ -29,12 +29,6 @@ export const Projects = () => {
               description={item.description}
             />
           ))}
-          {/* <Project
-            title="TITLE PROJECT"
-            tags={projectTags}
-            imageSrc={projectImage}
-            description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
-          /> */}
         </FlexWrapper>
       </Container>
     </StyledProjects>

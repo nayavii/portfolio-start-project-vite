@@ -96,7 +96,7 @@ const Description = styled.p`
 
   @media ${theme.media.mobile} {
     margin-bottom: 16px;
-    width: 350px;
+    width: 100%;
   }
 `;
 

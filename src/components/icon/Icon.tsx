@@ -19,4 +19,5 @@ export const Icon = ({iconId, width, height, viewBox}:IconPropsType) => {
 const Svg = styled.svg`
   display: block;
   margin: 0 auto;
+  
 `

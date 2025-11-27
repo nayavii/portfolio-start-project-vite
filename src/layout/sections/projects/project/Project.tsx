@@ -37,16 +37,28 @@ const StyledProject = styled.div`
   width: 520px;
   height: 100%;
   background-color: ${theme.colors.cardBg};
+
+  @media ${theme.media.mobile} {
+    width: 100%;
+  }
 `;
 
 const ContentWrapper = styled.div`
   padding: 25px 25px 35px;
+
+  @media ${theme.media.mobile} {
+    padding: 16px 16px 30px;
+  }
 `;
 
 const Image = styled.img`
   width: 100%;
   height: 390px;
   object-fit: cover;
+
+    @media ${theme.media.mobile} {
+    height: 290px;
+  }
 `;
 
 const Title = styled.h3``;

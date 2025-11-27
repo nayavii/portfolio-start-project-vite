@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Icon } from "../../components/icon/Icon";
 import { Menu } from "../../components/menu/Menu";
+import { theme } from "../../styles/Theme";
 
 export const Footer = () => {
   return (
@@ -15,7 +16,7 @@ export const Footer = () => {
               viewBox="0 0 38 38"
             />
           </SocialLink>
-          <SocialTitleLink >gmail</SocialTitleLink>
+          <SocialTitleLink>gmail</SocialTitleLink>
         </SocialItem>
 
         <SocialItem>
@@ -39,7 +40,9 @@ export const Footer = () => {
               viewBox="0 0 38 38"
             />
           </SocialLink>
-          <SocialTitleLink href="https://github.com/nayavii" target="_blank">github</SocialTitleLink>
+          <SocialTitleLink href="https://github.com/nayavii" target="_blank">
+            github
+          </SocialTitleLink>
         </SocialItem>
       </SocialIconList>
       <Menu menuItems={["Projects", "Contact"]} justify="center" gap="48px" />
@@ -61,6 +64,10 @@ const SocialIconList = styled.ul`
   gap: 76px;
   justify-content: center;
   align-items: center;
+
+  @media ${theme.media.mobile} {
+    gap: 45px;
+  }
 `;
 
 const SocialItem = styled.li`
@@ -84,4 +91,10 @@ const Copyright = styled.small`
   line-height: 26px;
   text-align: center;
   letter-spacing: 0.1em;
+
+      @media ${theme.media.mobile} {
+
+      font-size: 12px;
+    
+  }
 `;
