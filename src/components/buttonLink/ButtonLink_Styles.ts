@@ -9,6 +9,7 @@ const Link = styled.a<{ outlined?: boolean }>`
   background: ${theme.colors.gradient};
   border: none;
   color: ${theme.colors.bg};
+  transition: ${theme.animations.transition};
 
   &:hover {
     opacity: 0.85;
@@ -31,4 +32,4 @@ const Link = styled.a<{ outlined?: boolean }>`
 
 export const S = {
   Link,
-}
+};

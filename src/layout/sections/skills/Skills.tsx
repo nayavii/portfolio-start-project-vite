@@ -4,8 +4,11 @@ import { Skill } from "./skill/Skill";
 import { Container } from "../../../components/Container";
 import { S } from "./Skills_Styles";
 import React from "react";
+import { Fade } from "react-awesome-reveal";
 
 const skillsData = [
+  { iconId: "htmlSvg", title: "html" },
+  { iconId: "cssSvg", title: "css" },
   { iconId: "javascriptSvg", title: "javascript" },
   { iconId: "typescriptSvg", title: "typescript" },
   { iconId: "mongoSvg", title: "mongo bd" },
@@ -26,13 +29,13 @@ export const Skills: React.FC = () => {
       <Container>
         <SectionTitle>Skills</SectionTitle>
         <FlexWrapper wrap="wrap" justify="space-between" gap="60px 150px">
-          {skillsData.map(({ iconId, title }, index) => (
-            <Skill key={index} iconId={iconId} title={title} />
-          ))}
+          <Fade cascade damping={0.1} triggerOnce>
+            {skillsData.map(({ iconId, title }, index) => (
+              <Skill key={index} iconId={iconId} title={title} />
+            ))}
+          </Fade>
         </FlexWrapper>
       </Container>
     </S.Skills>
   );
 };
-
-

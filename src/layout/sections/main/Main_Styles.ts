@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { theme } from "../../../styles/Theme";
 import { font } from "../../../styles/Common";
 import { FlexWrapper } from "../../../components/FlexWrapper";
+import { Link } from "react-scroll";
 
 const Main = styled.section`
   min-height: 100vh;
@@ -63,24 +64,30 @@ const Description = styled.p`
 `;
 
 const Photo = styled.img`
-  width: 461px;
-  height: 332px;
+  height: 450px;
   object-fit: cover;
-  margin-bottom: 100px;
+
+  @media ${theme.media.large} {
+    margin-bottom: 100px;
+  }
 
   @media ${theme.media.tablet} {
     margin-bottom: 60px;
   }
 
   @media ${theme.media.mobile} {
-    width: 324px;
-    height: 233px;
+    height: 300px;
   }
 `;
 
-const IconWrapper = styled.a`
+const IconWrapper = styled(Link)`
   display: block;
   text-align: center;
+  margin-top: 100px;
+
+  @media ${theme.media.large} {
+    margin-top: 0;
+  }
 
   bottom: 0;
   @media ${theme.media.mobile} {

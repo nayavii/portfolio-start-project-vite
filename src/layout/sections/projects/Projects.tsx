@@ -1,4 +1,3 @@
-import { FlexWrapper } from "../../../components/FlexWrapper";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { Project } from "./project/Project";
 import { Menu } from "../../../components/menu/Menu";
@@ -7,11 +6,14 @@ import { projects } from "./projectsData";
 import React, { useState } from "react";
 import { S } from "./Projects_Styles";
 import { Slider } from "../../../components/slider/Slider";
-
-// const tabsName = projects.map((item) => item.category);
+import { AnimatePresence, motion } from "motion/react";
 
 const uniqueCategories = Array.from(
-  new Set(projects.map((item) => item.category))
+  new Set(
+    projects
+      .map((item) => item.category)
+      .filter((category): category is string => typeof category === "string")
+  )
 );
 
 const tabsName = [
@@ -39,19 +41,26 @@ export const Projects: React.FC = () => {
   };
 
   const projectsItems = filteredProjects.map((item, index) => (
-    <S.ProjectWrapper>
-      <Project
-        key={index}
-        title={item.title}
-        tags={item.tags}
-        imageSrc={item.projectImage}
-        description={item.description}
-      />
+    <S.ProjectWrapper key={index}>
+      <motion.div
+        layout
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <Project
+          title={item.title}
+          tags={item.tags}
+          imageSrc={item.projectImage}
+          description={item.description}
+        />
+      </motion.div>
     </S.ProjectWrapper>
   ));
 
   return (
-    <S.Projects>
+    <S.Projects id="projects">
       <Container>
         <SectionTitle>Projects</SectionTitle>
         <S.MenuWrapper>
@@ -63,8 +72,9 @@ export const Projects: React.FC = () => {
             currentFilterStatus={currentFilterStatus}
           />
         </S.MenuWrapper>
-
-        <Slider items={projectsItems} />
+        <AnimatePresence>
+          <Slider items={projectsItems} />
+        </AnimatePresence>
       </Container>
     </S.Projects>
   );

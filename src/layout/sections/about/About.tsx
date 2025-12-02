@@ -2,20 +2,21 @@ import { Container } from "../../../components/Container";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { S } from "./About_Styles";
+import photo from "../../../assets/images/about_photo.png";
 import React from "react";
 
 const languages = [
   { name: "Russian", level: "Native" },
-  { name: "English", level: "B2" },
+  { name: "English", level: "B1" },
   { name: "Spanish", level: "B2" },
 ];
 
 export const About: React.FC = () => {
   return (
-    <S.About>
+    <S.About id="about">
       <Container>
-        <FlexWrapper justify="space-between" gap="20px">
-          <S.Photo></S.Photo>
+        <FlexWrapper justify="space-between" gap="20px" align="center">
+          <S.Photo src={photo}/>
           <S.ContentWrapper>
             <SectionTitle>About me</SectionTitle>
             <FlexWrapper gap="12px" wrap="wrap">

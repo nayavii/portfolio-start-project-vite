@@ -8,11 +8,6 @@ import { font } from "../../../styles/Common";
 const ExperienceCard = styled.article`
   background-color: ${theme.colors.cardBg};
   padding: 50px 40px;
-  margin-bottom: 20px;
-
-  &:last-child {
-    margin-bottom: 0px;
-  }
 
   @media screen and (max-width: 993px) {
     ${FlexWrapper}:first-child {

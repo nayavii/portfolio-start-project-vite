@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { theme } from "../../styles/Theme";
+import { Link } from "react-scroll";
 
 const Menu = styled.nav<{ justify?: string; gap?: string }>`
   width: 100%;
@@ -24,7 +25,7 @@ const ListItem = styled.li<{ active?: boolean }>`
     bottom: -3px;
     height: 2px;
     background: ${theme.colors.gradient};
-    transition: width 0.3s ease;
+    transition: ${theme.animations.transition};
 
     ${(props) =>
       props.active &&
@@ -38,13 +39,28 @@ const ListItem = styled.li<{ active?: boolean }>`
   }
 `;
 
-const Link = styled.a`
+const TabLink = styled.a<{ active?: boolean }>`
+  color: ${theme.colors.text};
+  font-weight: 500;
+  cursor: pointer;
+  text-transform: uppercase;
+
+  ${(props) =>
+    props.active &&
+    css<{ active?: boolean }>`
+      color: ${theme.colors.accent};
+    `}
+`;
+
+const NavLink = styled(Link)`
   color: ${theme.colors.accent};
   font-weight: 500;
+  cursor: pointer;
 `;
 
 export const S = {
   Menu,
   ListItem,
-  Link,
+  NavLink,
+  TabLink,
 };

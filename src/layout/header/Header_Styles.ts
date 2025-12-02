@@ -9,7 +9,10 @@ const Header = styled.header`
   right: 0;
   background-color: ${theme.colors.bg};
   z-index: 1000;
+
 `;
+
+
 
 export const S = {
   Header,

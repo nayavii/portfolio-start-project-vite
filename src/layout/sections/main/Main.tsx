@@ -6,10 +6,11 @@ import { S } from "./Main_Styles";
 import React from "react";
 import foto from "../../../assets/images/main_photo.png";
 import Typewriter from "typewriter-effect";
+import { Link } from "react-scroll";
 
 export const Main: React.FC = () => {
   return (
-    <S.Main>
+    <S.Main id="home">
       <Container>
         <FlexWrapper justify="space-between" wrap="wrap" align="center">
           <S.Content>
@@ -17,7 +18,11 @@ export const Main: React.FC = () => {
               <p>FRONTEND DEVELOPER, WEB DESIGNER</p>
               <Typewriter
                 options={{
-                  strings: ["FRONTEND DEVELOPER", "WEB DESIGNER", "AND A GOOD PERSON"],
+                  strings: [
+                    "FRONTEND DEVELOPER",
+                    "WEB DESIGNER",
+                    "AND A GOOD PERSON",
+                  ],
                   autoStart: true,
                   loop: true,
                   delay: 50,
@@ -30,13 +35,15 @@ export const Main: React.FC = () => {
               into every interface I build.
             </S.Description>
             <FlexWrapper gap="25px" align="center">
-              <ButtonLink link="#" title="Contact Me" />
-              <ButtonLink link="#" title="Download CV" outlined />
+              <Link to="contacts" smooth={true}>
+                <ButtonLink link="" title="Contact Me" />
+              </Link>
+              <ButtonLink target="_blank" link="public/CV_Alesik_Hanna_FrontEndDeveloper_EN.pdf" title="Download CV" outlined />
             </FlexWrapper>
           </S.Content>
           <S.Photo src={foto} alt="" />
         </FlexWrapper>
-        <S.IconWrapper>
+        <S.IconWrapper to="about" smooth={true}>
           <Icon
             iconId={"arrowScroll"}
             width="32px"

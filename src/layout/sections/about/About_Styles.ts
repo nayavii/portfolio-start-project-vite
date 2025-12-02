@@ -12,17 +12,14 @@ const About = styled.section`
   }
 `;
 
-const Photo = styled.div`
-  background-color: #ec8fff;
-  min-width: 300px;
-  min-height: 200px;
+const Photo = styled.img`
+  object-fit: cover;
+  min-width: 250px;
+  max-width: 500px;
+  height: 100%;
+  margin: 0 auto;
 
   @media ${theme.media.tablet} {
-    margin: 0 auto;
-    min-height: 300px;
-  }
-
-  @media ${theme.media.mobile} {
     display: none;
   }
 `;
@@ -31,6 +28,7 @@ const ContentWrapper = styled.div`
   position: relative;
   padding: 10px 0 10px 20px;
   height: 100%;
+  text-align: left;
 
   &::before {
     content: "";

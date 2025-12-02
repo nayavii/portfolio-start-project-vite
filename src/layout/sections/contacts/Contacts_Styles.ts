@@ -25,11 +25,12 @@ const Label = styled.label`
   flex-direction: column;
   gap: 8px;
   color: ${theme.colors.text};
+
 `;
 
 const Field = styled.input`
-  padding: 16px 0px 16px 18px;
-  background-color: transparent;
+  padding: 16px 20px 16px 18px;
+  background-color: ${theme.colors.cardBg};
   border: 1px solid ${theme.colors.accent};
   border-radius: 6px;
   color: ${theme.colors.text};
@@ -41,6 +42,12 @@ const Field = styled.input`
   }
 `;
 
+const Option = styled.option`
+  color: ${theme.colors.text};
+  font-size: 10px;
+  width: fit-content;
+`;
+
 const FormButton = styled.button`
   background: ${theme.colors.gradient};
   padding: 14px 0;
@@ -49,6 +56,7 @@ const FormButton = styled.button`
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
+  transition: ${theme.animations.transition};
 
   &:hover {
     opacity: 0.65;
@@ -61,4 +69,5 @@ export const S = {
   Label,
   Field,
   FormButton,
+  Option,
 };

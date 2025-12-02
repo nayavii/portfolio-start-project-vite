@@ -5,14 +5,22 @@ type TabItemType = {
   title: string;
   status: string;
 };
+
+type MenuItemType = {
+  title: string;
+  link: string;
+};
+
 type MenuPropsType = {
-  menuItems?: Array<string>;
+  menuItems?: MenuItemType[];
   tabsItems?: TabItemType[];
   justify?: string;
   gap?: string;
   handleFilterChange?: (status: string) => void;
   currentFilterStatus?: string;
 };
+
+type MenuUnionItem = MenuItemType | TabItemType;
 
 export const Menu: React.FC<MenuPropsType> = ({
   menuItems,
@@ -22,31 +30,36 @@ export const Menu: React.FC<MenuPropsType> = ({
   handleFilterChange,
   currentFilterStatus,
 }) => {
-  const items = menuItems ?? tabsItems ?? [];
+  const items: MenuUnionItem[] = menuItems ?? tabsItems ?? [];
+
   return (
     <S.Menu justify={justify} gap={gap}>
       <ul>
-        {items.map((item, index) => (
-          <S.ListItem
-            active={
-              typeof item !== "string" && item.status === currentFilterStatus
-            }
-            key={index}
-          >
-            {typeof item === "string" ? (
-              <S.Link href="">{item}</S.Link>
-            ) : (
-              <S.Link
-                as={"button"}
-                onClick={() =>
-                  handleFilterChange && handleFilterChange(item.status)
-                }
-              >
-                {item.title}
-              </S.Link>
-            )}
-          </S.ListItem>
-        ))}
+        {items.map((item, index) => {
+          const isTabItem =
+            typeof item === "object" && item !== null && "status" in item;
+          const isActive = isTabItem && item.status === currentFilterStatus;
+
+          return (
+            <S.ListItem active={isActive} key={index}>
+              {isTabItem ? (
+                <S.TabLink
+                  active={isActive}
+                  as="button"
+                  onClick={() =>
+                    handleFilterChange && handleFilterChange(item.status)
+                  }
+                >
+                  {item.title}
+                </S.TabLink>
+              ) : (
+                <S.NavLink to={item.link} smooth={true}>
+                  {item.title}
+                </S.NavLink>
+              )}
+            </S.ListItem>
+          );
+        })}
       </ul>
     </S.Menu>
   );

@@ -13,7 +13,11 @@ const socialLinks = [
   { id: "githubSvg", title: "github", href: "https://github.com/nayavii" },
 ];
 
-const menuItems = ["Projects", "Contact"];
+const menuItems = [
+  { title: "Home", link: "home" },
+  { title: "Projects", link: "projects" },
+];
+
 
 export const Footer: React.FC = () => {
   return (

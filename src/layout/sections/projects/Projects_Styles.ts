@@ -38,7 +38,7 @@ const ContentWrapper = styled.div`
 const Image = styled.img`
   width: 100%;
   height: auto;
-  max-height: 390px;
+  max-height: 340px;
   object-fit: cover;
 `;
 
