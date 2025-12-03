@@ -92,6 +92,7 @@ const IconWrapper = styled(Link)`
   margin-top: 100px;
   animation: ${bounce} 2s ease-in-out infinite;
   animation-delay: 0.4s;
+  cursor: pointer;
 
   @media ${theme.media.large} {
     margin-top: 0;
