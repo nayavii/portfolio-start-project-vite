@@ -15,10 +15,13 @@ const MenuWrapper = styled.div`
 // Project styles
 
 const ProjectWrapper = styled.div`
-  flex: 0 0 auto;
-  padding: 0 10px;
+  padding-right: 30px;
   width: 100%;
-  max-width: 520px;
+  max-width: 540px;
+
+  @media ${theme.media.mobile} {
+   padding: 0 5px;
+  }
 `;
 
 const Project = styled.div`
@@ -57,7 +60,7 @@ const Tag = styled.span`
 `;
 
 const Description = styled.p`
- width: 100%;
+  width: 100%;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 4%;
